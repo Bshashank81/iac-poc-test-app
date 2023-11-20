@@ -21,12 +21,13 @@ jobs:
           # directory: eks/
           output_format: json # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
           output_file_path: snyk.json
+          download_external_modules: true
 
       - name: Upload Json as artifact
         uses: actions/upload-artifact@v2
         with:
           name: snyk-report
-          path: reports/snyk.json
+          path: snyk.json
 
   iac-dd-scan:
     runs-on: ubuntu-latest
