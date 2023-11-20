@@ -55,7 +55,7 @@ jobs:
       - name: Use JSON from SARIF
         run: |
           mkdir -p ./reports
-          mv snyk.json ./reports/snyk.json
+          mv results_json.json ./reports/snyk.json
 
       - name: Publish report
         id: import-scan
