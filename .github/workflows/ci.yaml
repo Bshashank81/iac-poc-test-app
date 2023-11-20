@@ -7,36 +7,38 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 jobs:
-  iac:
+  checkov-job:
     runs-on: ubuntu-latest
+    name: checkov-action
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Snyk to check Kubernetes manifest file for issues
-        uses: snyk/actions/iac@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          json: true
-          # args: --json > snyk.json
+      - name: Checkout repo
+        uses: actions/checkout@master
 
-      - name: Ensure Json file exists
-        run: ls -al
+      - name: Run Checkov action
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: example/
+          output_format: json # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
+          output_file_path: reports/snyk.json
 
       - name: Upload Json as artifact
         uses: actions/upload-artifact@v2
         with:
           name: snyk-report
-          path: snyk.json
+          path: reports/snyk.json
 
   iac-dd-scan:
     runs-on: ubuntu-latest
-    needs: iac
+    needs: checkov-job
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Display downloaded files
+        run: ls
 
       - name: Download SARIF report artifact
         uses: actions/download-artifact@v2
