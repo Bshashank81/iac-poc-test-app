@@ -41,7 +41,7 @@ jobs:
       - name: Download SARIF report artifact
         uses: actions/download-artifact@v2
         with:
-          name: semgrep-report
+          name: snyk-report
           path: .
 
       - name: Display downloaded files
