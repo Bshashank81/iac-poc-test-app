@@ -59,7 +59,7 @@ jobs:
           token: ${{ secrets.DEFECTDOJO_TOKEN }}
           defectdojo_url: ${{ secrets.DEFECTDOJO_URL }}
           file: reports/snyk.json
-          scan_type: Semgrep JSON Report
+          scan_type: Snyk Scan
           engagement: ${{ secrets.DEFECTDOJO_ENGAGEMENT_ID }}
           push_to_jira: true
 
