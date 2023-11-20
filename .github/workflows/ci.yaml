@@ -22,6 +22,8 @@ jobs:
           output_format: json # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
           output_file_path: snyk.json
           download_external_modules: true
+          soft_fail: true # optional: do not return an error code if there are failed checks
+          framework: terraform
 
       - name: Upload Json as artifact
         uses: actions/upload-artifact@v2
