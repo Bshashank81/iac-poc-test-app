@@ -20,14 +20,14 @@ jobs:
           json: true
           # args: --json > snyk.json
 
-      # - name: Ensure Json file exists
-      #   run: ls -al
+      - name: Ensure Json file exists
+        run: ls -al
 
-      # - name: Upload Json as artifact
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: snyk-report
-      #     path: snyk.json
+      - name: Upload Json as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: snyk-report
+          path: snyk.json
 
   iac-dd-scan:
     runs-on: ubuntu-latest
