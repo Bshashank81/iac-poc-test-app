@@ -67,7 +67,7 @@ jobs:
           engagement: ${{ secrets.DEFECTDOJO_ENGAGEMENT_ID }}
           push_to_jira: true
 
-      - name: Show response
+      - name: Show final response
         run: |
           set -e
           printf '%s\n' '${{ steps.import-scan.outputs.response }}'
