@@ -8,7 +8,7 @@ This project utilizes a shared configuration directory named `.git-shared` to ma
 
 The `.git-shared` directory contains the following essential files:
 
-- `config`: Append file configuration in .git/congif file. 
+- `config`: Append the file configuration in .git/config file. 
 - `hooks/commit-msg`: Append the file if exist or copy it.
 - `hooks/pre-commit`: Append the file if exist or copy it.
 - `hooks/prepare-commit-msg`: Append the file if exist or copy it.
