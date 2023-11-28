@@ -4,7 +4,7 @@ git secrets --pre_commit_hook -- "$@"
 
 current_branch=$(git symbolic-ref --short HEAD)
 
-if [ "$current_branch" = "master" ]; then
+if [ "$current_branch" = "master" ] || [ "$current_branch" = "main" ]; then
     echo "Direct commits to the master branch are not allowed."
     exit 1
 fi
