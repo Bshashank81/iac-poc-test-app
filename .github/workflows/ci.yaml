@@ -85,7 +85,7 @@ jobs:
       - name: KICS Github Action
         uses: Checkmarx/kics-github-action@v1.7.0
         with:
-          path: # Specify the path to the file or directory to scan
+          path: $GITHUB_WORKSPACE/eks
           output_path: # Specify the file path to store the result in JSON format (optional)
           payload_path: # Specify the file path to store the source internal representation in JSON format (optional)
           queries: # Specify the path to the directory with queries (optional)
