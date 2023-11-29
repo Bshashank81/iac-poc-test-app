@@ -79,6 +79,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Display downloaded files
+        run: ls
+
       - name: KICS Github Action
         uses: Checkmarx/kics-github-action@v1.7.0
         with:
