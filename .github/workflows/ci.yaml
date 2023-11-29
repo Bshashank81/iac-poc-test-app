@@ -74,18 +74,16 @@ jobs:
 
   checkmarx-job:
     runs-on: ubuntu-latest
-    name: checkmarx-iac
-    steps:
-      - uses: actions/checkout@v2
-      - name: Mkdir results-dir
-        # make sure results dir is created
-        run: mkdir -p results-dir
-      - name: run kics Scan
-        uses: Checkmarx/kics-github-action@v1.7.0
-        with:
-          path: "terraform"
-          output_path: results-dir
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results-dir/results.sarif
+    - name: KICS Github Action
+      uses: Checkmarx/kics-github-action@v1.7.0
+      with:
+        # path to file or directory to scan
+        path:
+        # file path to store result in json format
+        output_path: # optional
+        # file path to store source internal representation in JSON format
+        payload_path: # optional
+        # path to directory with queries (default "./assets/queries")
+        queries: # optional
+        # verbose scan
+        verbose: # optional
