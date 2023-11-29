@@ -72,18 +72,18 @@ jobs:
   #         set -e
   #         printf '%s\n' '${{ steps.import-scan.outputs.response }}'
 
-  checkmarx-job:
+  kics-scan:
     runs-on: ubuntu-latest
-    - name: KICS Github Action
-      uses: Checkmarx/kics-github-action@v1.7.0
-      with:
-        # path to file or directory to scan
-        path:
-        # file path to store result in json format
-        output_path: # optional
-        # file path to store source internal representation in JSON format
-        payload_path: # optional
-        # path to directory with queries (default "./assets/queries")
-        queries: # optional
-        # verbose scan
-        verbose: # optional
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: KICS Github Action
+        uses: Checkmarx/kics-github-action@v1.7.0
+        with:
+          path: # Specify the path to the file or directory to scan
+          output_path: # Specify the file path to store the result in JSON format (optional)
+          payload_path: # Specify the file path to store the source internal representation in JSON format (optional)
+          queries: # Specify the path to the directory with queries (optional)
+          verbose: # Specify whether to enable verbose scan (optional)
