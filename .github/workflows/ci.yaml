@@ -71,6 +71,7 @@ jobs:
   #       run: |
   #         set -e
   #         printf '%s\n' '${{ steps.import-scan.outputs.response }}'
+<<<<<<< HEAD
 
   kics-scan:
     runs-on: ubuntu-latest
@@ -138,3 +139,5 @@ jobs:
         run: |
           set -e
           printf '%s\n' '${{ steps.import-scan.outputs.response }}'
+=======
+>>>>>>> 1a7086fa6491647306e18d44e5ad1a8e252d0e4b
