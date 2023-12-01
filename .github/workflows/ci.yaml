@@ -99,7 +99,7 @@ jobs:
 
   iac-dd-scan:
     runs-on: ubuntu-latest
-    needs: checkov-job
+    needs: kics-scan
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
