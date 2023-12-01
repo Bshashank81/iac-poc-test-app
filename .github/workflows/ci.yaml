@@ -2,9 +2,9 @@ name: Build
 on:
   push:
     branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
+      - testing
+  # pull_request:
+  #   types: [opened, synchronize, reopened, closed]
 
 jobs:
   # checkov-job:
@@ -121,7 +121,7 @@ jobs:
       - name: Use JSON from SARIF
         run: |
           mkdir -p ./reports
-          mv results_json.json ./reports/snyk.json
+          mv results_json.json ./reports/results_json.json
 
       - name: Publish report
         id: import-scan
