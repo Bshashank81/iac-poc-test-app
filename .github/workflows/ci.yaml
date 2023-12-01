@@ -121,7 +121,7 @@ jobs:
       - name: Use JSON from SARIF
         run: |
           mkdir -p ./reports
-          mv results_json.json ./reports/results_json.json
+          mv results.json ./reports/results_json.json
 
       - name: Publish report
         id: import-scan
