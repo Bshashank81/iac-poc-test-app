@@ -82,7 +82,7 @@ jobs:
       - name: run kics Scan
         uses: checkmarx/kics-github-action@v1.7.0
         with:
-          # scanning two directories: ./terraform/ ./cfn-templates/ plus a single file
+          # scanning 1 directories: "./eks"
           path: "eks"
           ignore_on_exit: results
           output_path: .
@@ -109,7 +109,7 @@ jobs:
       - name: Display downloaded files
         run: ls
 
-      - name: Download SARIF report artifact
+      - name: Download json report artifact
         uses: actions/download-artifact@v2
         with:
           name: kicks-report
