@@ -44,4 +44,5 @@ git: 'secrets' is not a git command. See 'git --help'.
 
 #### For installing git-secrets use the below commands:
 sudo apt update
+
 sudo apt install && git-secrets
