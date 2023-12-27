@@ -34,3 +34,12 @@ cp -r .git-shared/* .git/
 # If files exist in .git directory, append content
 cp -r -n .git-shared/* .git/
 Replace * with specific file names as needed.
+
+If git-secrets is not installed on the dev laptop the following message is thrown
+git: 'secrets' is not a git command. See 'git --help'.
+
+For installing git-secrets use the below commands:
+sudo apt update
+sudo apt install git-secrets
+
+
