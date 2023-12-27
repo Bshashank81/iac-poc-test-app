@@ -19,9 +19,9 @@ The `.git-shared` directory contains the following essential files:
 
 Ensure that the `.git-shared/` directory is added to your `.gitignore` file to avoid accidentally committing its contents:
 
- .gitignore
+.gitignore
 
-.git-share
+.git-shared/
 
 
 
@@ -34,6 +34,7 @@ cp -r .git-shared/* .git/
 
 #### If files exist in .git directory, append content
 cp -r -n .git-shared/* .git/
+
 Replace * with specific file names as needed.
 
 ### Warning:- 
@@ -45,4 +46,5 @@ git: 'secrets' is not a git command. See 'git --help'.
 #### For installing git-secrets use the below commands:
 sudo apt update
 
-sudo apt install && git-secrets
+sudo apt install git-secrets
+
