@@ -19,27 +19,29 @@ The `.git-shared` directory contains the following essential files:
 
 Ensure that the `.git-shared/` directory is added to your `.gitignore` file to avoid accidentally committing its contents:
 
-```plaintext
-# .gitignore
+ .gitignore
 
-.git-shared/
-2. Manual Copying of Files
+.git-share
+
+
+
+#### 2. Manual Copying of Files
 Certain files from the .git-shared directory are essential for the project. Follow these steps to manually copy these files to your local .git directory:
 
-bash
-Copy code
-# If files do not exist in .git directory
+
+#### If files do not exist in .git directory
 cp -r .git-shared/* .git/
 
-# If files exist in .git directory, append content
+#### If files exist in .git directory, append content
 cp -r -n .git-shared/* .git/
 Replace * with specific file names as needed.
 
-If git-secrets is not installed on the dev laptop the following message is thrown
+### Warning:- 
+
+#### If git-secrets is not installed on the dev laptop the following message is thrown
+
 git: 'secrets' is not a git command. See 'git --help'.
 
-For installing git-secrets use the below commands:
+#### For installing git-secrets use the below commands:
 sudo apt update
 sudo apt install git-secrets
-
-
