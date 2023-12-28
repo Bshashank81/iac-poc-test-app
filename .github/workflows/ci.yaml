@@ -38,17 +38,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Display downloaded files
-        run: ls
-
       - name: Download json report artifact
         uses: actions/download-artifact@v2
         with:
           name: kicks-report
           path: .
-
-      - name: Display downloaded files
-        run: ls
 
       - name: Use JSON from SARIF
         run: |
