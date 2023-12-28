@@ -154,7 +154,6 @@ rules:
   - apiGroups:
       - ""
     resources:
-      - configmaps
       - endpoints
       - nodes
       - pods

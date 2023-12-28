@@ -1,6 +1,6 @@
 variable "cluster" {
   default = {
-    name               = "bc-111"
+    name               = "devsecops-demo"
     kubernetes_version = "1.23"
     vpc = {
       vpc_id = "vpc-009470e55cc89e05e"
@@ -10,9 +10,9 @@ variable "cluster" {
       ]
     }
     tags = {
-      "Created By"  = "Himanshu kapoor"
-      "owner"       = "himanshu.kapoor@zemosolabs.com"
-      "description" = "EKS Cluster created for Bootcamp-111 using Terraform"
+      "Created By"  = "Shashank Balabhadra"
+      "owner"       = "shashank.balabhadra@zemosolabs.com"
+      "description" = "EKS Cluster created for devsecops using Terraform"
     }
     endpoint_public_access = true
   }
@@ -50,4 +50,11 @@ variable "ingress-nginx-controller" {
   default = {
     acm_cert_arn = "arn:aws:acm:us-east-2:365299945243:certificate/372b91a9-f14e-4ee9-bddc-6f8c34993840"
   }
+}
+
+variable "access_key" {
+  type = string
+}
+variable "secret_key" {
+  type = string
 }
